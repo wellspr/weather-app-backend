@@ -38,6 +38,10 @@ app.get("/weather/get-icon/:icode", (req, res) => {
     res.status(200).json({iconURL: weatherData.getIconURL(req.params.icode)});
 });
 
+app.get("/weather/get-icon-list", (req, res) => {
+    res.status(200).json(weatherData.getIconList());
+});
+
 app.get("/weather/get-city/:city", (req, res) => {
     res.status(200).json(weatherData.getCityList(req.params.city));
 });
